@@ -1,0 +1,49 @@
+from pathlib import Path
+#Get the input puzzle file and extract values
+mojaLista = open('AdventOfCode2024\Puzzle1\IdInput.txt')
+#idList = mojaLista.read()
+#array to be feed with first column
+firstColumn = []
+secondColumn = []
+summaryOfColumnsElements=[]
+
+for line in mojaLista:
+    #here I am getting line by line output
+    line=line.rstrip()
+
+    idNumber1 = line[0:5]
+    idNumber2 = line[8:13]
+    #here I am creat
+    firstColumn.append(idNumber1)
+    secondColumn.append(idNumber2)
+
+firstColumn = [int(x) for x in firstColumn]
+firstColumn.sort()
+secondColumn = [int(x) for x in secondColumn]
+secondColumn.sort()
+print(firstColumn[0:5])
+print(secondColumn[0:5])
+for idNumber1,idNumber2 in zip(firstColumn, secondColumn):
+    print(idNumber1, idNumber2)
+    result = idNumber1 - idNumber2
+    if result >= 0:
+        summaryOfColumnsElements.append(result)
+    else:
+        result = -(result)
+        summaryOfColumnsElements.append(result)
+resultForAdvent = sum(summaryOfColumnsElements)
+print(resultForAdvent)
+#From file to list
+#with open('AdventOfCode2024\Puzzle1\idInput.txt') as mojaLista:
+ #   print([line.rstrip('\n') for line in mojaLista])
+
+
+
+#Get the list of first column
+#change str to integer
+#Sort the list from lower to higher
+#Get the list of second column
+#Sort the list from lower to higher
+#Go through indexes of the list
+#Get the difference between the numbers assign to each of the index in lists 
+#Sum the differences

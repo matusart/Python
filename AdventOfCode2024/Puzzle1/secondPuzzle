@@ -1,0 +1,38 @@
+from pathlib import Path
+#Get the input puzzle file and extract values
+mojaLista = open('AdventOfCode2024\Puzzle1\IdInput.txt')
+#idList = mojaLista.read()
+#array to be feed with first column
+firstColumn = []
+secondColumn = []
+similarityScoresList=[]
+result = 0
+
+for line in mojaLista:
+    #here I am getting line by line output
+    line=line.rstrip()
+
+    idNumber1 = line[0:5]
+    idNumber2 = line[8:13]
+    #here I am creat
+    firstColumn.append(idNumber1)
+    secondColumn.append(idNumber2)
+#sorting of the Lists 
+firstColumn = [int(x) for x in firstColumn]
+firstColumn.sort()
+secondColumn = [int(x) for x in secondColumn]
+secondColumn.sort()
+for x in firstColumn:
+    for y in secondColumn:
+        if x == y:
+            newCount = secondColumn.count(y)
+            print(newCount)
+            result = newCount*x
+    similarityScore = result*x
+    similarityScoresList.append(similarityScore)
+#if x is == y than I need to multiply the x by result and store it in the new List and than
+#in the end sum the element in the List
+print(result)
+print(similarityScoresList)
+resultForAdvent = sum(similarityScoresList)
+print(resultForAdvent)
