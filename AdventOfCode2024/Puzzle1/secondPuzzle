@@ -23,16 +23,7 @@ firstColumn.sort()
 secondColumn = [int(x) for x in secondColumn]
 secondColumn.sort()
 for x in firstColumn:
-    for y in secondColumn:
-        if x == y:
-            newCount = secondColumn.count(y)
-            print(newCount)
-            result = newCount*x
-    similarityScore = result*x
-    similarityScoresList.append(similarityScore)
-#if x is == y than I need to multiply the x by result and store it in the new List and than
-#in the end sum the element in the List
+    newCount = secondColumn.count(x)
+    result += newCount*x
+          
 print(result)
-print(similarityScoresList)
-resultForAdvent = sum(similarityScoresList)
-print(resultForAdvent)
