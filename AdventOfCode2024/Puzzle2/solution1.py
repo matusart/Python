@@ -9,6 +9,12 @@ for line in input_data:
     newInt = int(x)
     #here the integer is added to the list a
     a.append(newInt)  
+    #now I need to find a way how to check if numbers are increasing or not.
+    #lets take first number and compare with the second one in a list
+    #IF is it bigger yes is the second bigger than third and so on
+    #IF is it smaller than second one check the difference
+    # if a[0] > a[1]
+
   print(a)
   a.clear()
 
